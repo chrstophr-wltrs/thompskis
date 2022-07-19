@@ -1,6 +1,10 @@
-# fresh project
+# ThompSkis
 
-### Usage
+A lite web app for tracking the waitlist and ride times on the jet skis for the Thompson Family Reunion (AKA 'The Condos').
+
+## Development
+
+### Live Server
 
 Start the project:
 
