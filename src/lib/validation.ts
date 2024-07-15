@@ -1,5 +1,5 @@
-import { Family, Sex } from '../model';
-import type { Ride, Rider } from '../model';
+import { Family, Sex } from './model';
+import type { Ride, Rider } from './model';
 
 export function isValidRide(ride: Ride): boolean {
 	return ride.riders.some((r) => r.family === Family.Thompson && r.age < 18 && r.sex === Sex.Female)
