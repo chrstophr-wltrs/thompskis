@@ -1,7 +1,9 @@
 import type { Rider } from './Rider';
 
 export interface WaitlistEntry {
+	id: string;
 	riders: Rider[];
 	createdAt: Date;
-	id: string;
+	rideCountScore: number;
+	rideMinutesScore: number;
 }
