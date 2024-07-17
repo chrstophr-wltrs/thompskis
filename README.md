@@ -4,7 +4,17 @@ A lite web app for tracking the waitlist and ride times on the jet skis for the 
 
 ## Developing
 
-Once you've cloned the project and installed dependencies with `pnpm install`, start a development server:
+ThompSkis uses [pnpm](https://pnpm.io/installation) for package management.
+
+Once you've cloned the project, you can install dependencies with `pnpm install`.
+
+### Database
+
+For development, you'll need to [create a local SQLite database](https://www.prisma.io/dataguide/sqlite/setting-up-a-local-sqlite-database). You should also create a `.env` file and set the appropriate connection string as an environment variables, ex `DATABASE_URL="file:./dev.db"`.
+
+### Dev Server
+
+After setup is finished, start the development server:
 
 ```bash
 pnpm run dev
