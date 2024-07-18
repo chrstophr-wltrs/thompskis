@@ -33,9 +33,9 @@ model Rider {
 
 model Ride {
   id          String      @id @default(uuid())
-  startTime   DateTime
+  startTime   DateTime    @default(now())
   endTime     DateTime?
-  isComplete  Boolean
+  isComplete  Boolean     @default(false)
   riders      Rider[]
   @@map("rides")
 }
@@ -43,7 +43,7 @@ model Ride {
 model WaitlistEntry {
   id                String      @id @default(uuid())
   riders            Rider[]
-  createdAt         DateTime
+  createdAt         DateTime    @default(now())
   rideCountScore    Int
   rideMinutesScore  Int
   @@map("waitlist")
