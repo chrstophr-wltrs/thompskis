@@ -12,3 +12,39 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
+
+model Rider {
+  id                  String            @id @default(uuid())
+  firstName           String
+  lastName            String
+  nickName            String?
+  family              Int
+  sex                 Int
+  age                 Int
+  rideMinutes         Int
+  rideCount           Int
+  availableStart      DateTime?
+  availableEnd        DateTime?
+  availableDuration   Int?
+  rides               Ride[]            @relation("RidesToRiders")
+  waitlistEntries     WaitlistEntry[]   @relation("WaitlistEntriesToRiders)
+  @@map("riders")
+}
+
+model Ride {
+  id          String      @id @default(uuid())
+  startTime   DateTime
+  endTime     DateTime?
+  isComplete  Boolean
+  riders      Rider[]     @relation("RidesToRiders)
+  @@map("rides")
+}
+
+model WaitlistEntry {
+  id                String      @id @default(uuid())
+  riders            Rider[]     @relation("WaitlistEntriesToRiders)
+  createdAt         DateTime
+  rideCountScore    Int
+  rideMinutesScore  Int
+  @@map("waitlist")
+}
