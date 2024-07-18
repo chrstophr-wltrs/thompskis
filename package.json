@@ -38,8 +38,6 @@
 	"type": "module",
 	"dependencies": {
 		"@prisma/client": "^5.17.0",
-		"date-fns": "^3.6.0",
-		"sqlite3": "^5.1.7",
-		"uuid": "^10.0.0"
+		"date-fns": "^3.6.0"
 	}
 }
