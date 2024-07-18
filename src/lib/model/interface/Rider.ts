@@ -7,7 +7,7 @@ import type { Family, Sex, TimeSpan } from '..';
  * and the time when they'd be available */
 export interface Rider extends CreateRiderRequest {
 	id: string;
-	nickName: string | null;
+	nickName?: string;
 	rideTime: Duration;
 	rideCount: number;
 }
@@ -18,5 +18,5 @@ export interface CreateRiderRequest {
 	family: Family;
 	sex: Sex;
 	age: number;
-	availableTime: TimeSpan | null;
+	availableTime?: TimeSpan;
 }
