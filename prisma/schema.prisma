@@ -18,8 +18,8 @@ model Rider {
   firstName         String
   lastName          String
   nickName          String?
-  family            Int
-  sex               Int
+  family            Family
+  sex               Sex
   age               Int
   rideMinutes       Int
   rideCount         Int
@@ -50,4 +50,18 @@ model WaitlistEntry {
   rideMinutesScore Int
 
   @@map("waitlist")
+}
+
+enum Family {
+  FORSYTH
+  ALLRED
+  WALTERS
+  SCRIBNER
+  SEAMAN
+  THOMPSON
+}
+
+enum Sex {
+  MALE
+  FEMALE
 }
