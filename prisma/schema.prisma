@@ -26,8 +26,8 @@ model Rider {
   availableStart      DateTime?
   availableEnd        DateTime?
   availableDuration   Int?
-  rides               Ride[]            @relation("RidesToRiders")
-  waitlistEntries     WaitlistEntry[]   @relation("WaitlistEntriesToRiders)
+  rides               Ride[]
+  waitlistEntries     WaitlistEntry[]
   @@map("riders")
 }
 
@@ -36,13 +36,13 @@ model Ride {
   startTime   DateTime
   endTime     DateTime?
   isComplete  Boolean
-  riders      Rider[]     @relation("RidesToRiders)
+  riders      Rider[]
   @@map("rides")
 }
 
 model WaitlistEntry {
   id                String      @id @default(uuid())
-  riders            Rider[]     @relation("WaitlistEntriesToRiders)
+  riders            Rider[]
   createdAt         DateTime
   rideCountScore    Int
   rideMinutesScore  Int
