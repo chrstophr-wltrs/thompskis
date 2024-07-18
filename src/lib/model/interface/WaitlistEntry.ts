@@ -1,4 +1,4 @@
-import type { Rider } from './Rider';
+import type { Rider } from '.';
 
 export interface WaitlistEntry {
 	id: string;
