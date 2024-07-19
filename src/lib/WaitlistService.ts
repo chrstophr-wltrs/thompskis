@@ -51,4 +51,13 @@ export default class WaitlistService {
 			return entry;
 		}
 	}
+
+	/* Sort waitlist by rideCountScore and createdDate */
+	public static sort(): void {
+		this._waitlist.sort((a, b) => {
+			return a.rideCountScore === b.rideCountScore
+				? a.createdAt.getTime() - b.createdAt.getTime()
+				: a.rideCountScore - b.rideCountScore;
+		});
+	}
 }
