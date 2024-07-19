@@ -19,7 +19,6 @@ export default class RiderService {
 		const newRider: Rider = {
 			...rider,
 			id: crypto.randomUUID(),
-			rideMinutes: 0,
 			rideCount: 0
 		};
 		RiderService._riders.push(newRider);
