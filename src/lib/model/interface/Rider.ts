@@ -1,4 +1,3 @@
-import type { Duration } from 'date-fns';
 import type { Family, Sex, TimeSpan } from '..';
 
 /* Defines someone who could ride on a Jetski,
@@ -8,7 +7,7 @@ import type { Family, Sex, TimeSpan } from '..';
 export interface Rider extends CreateRiderRequest {
 	id: string;
 	nickName?: string;
-	rideTime: Duration;
+	rideMinutes: number;
 	rideCount: number;
 }
 
