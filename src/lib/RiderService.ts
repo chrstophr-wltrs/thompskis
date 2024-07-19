@@ -5,14 +5,14 @@ export default class RiderService {
 
 	public static get(searchString?: string): Rider[] {
 		return searchString
-			? RiderService._riders.filter(
+			? this._riders.filter(
 					(r) => r.firstName.includes(searchString) || r.lastName.includes(searchString)
 				)
-			: RiderService._riders;
+			: this._riders;
 	}
 
 	public static getById(id: string): Rider | undefined {
-		return RiderService._riders.find((r) => r.id === id);
+		return this._riders.find((r) => r.id === id);
 	}
 
 	public static add(rider: CreateRiderRequest): Rider {
@@ -21,7 +21,7 @@ export default class RiderService {
 			id: crypto.randomUUID(),
 			rideCount: 0
 		};
-		RiderService._riders.push(newRider);
+		this._riders.push(newRider);
 		return newRider;
 	}
 }

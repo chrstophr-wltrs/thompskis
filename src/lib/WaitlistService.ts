@@ -6,7 +6,7 @@ export default class WaitlistService {
 
 	public static get(searchString?: string): WaitlistEntry[] {
 		return searchString
-			? WaitlistService._waitlist.filter((entry) =>
+			? this._waitlist.filter((entry) =>
 					entry.riders.some(
 						(rider) =>
 							rider.firstName.includes(searchString) ||
@@ -14,7 +14,7 @@ export default class WaitlistService {
 							(rider.nickName && rider.nickName.includes(searchString))
 					)
 				)
-			: WaitlistService._waitlist;
+			: this._waitlist;
 	}
 
 	public static add(riders: Rider[]): WaitlistEntry {
@@ -22,10 +22,10 @@ export default class WaitlistService {
 			id: crypto.randomUUID(),
 			createdAt: new Date(),
 			riders: riders,
-			rideCountScore: WaitlistService.findRideCountScore(riders),
+			rideCountScore: this.findRideCountScore(riders),
 			expectedWaitMinutes: 0
 		};
-		WaitlistService._waitlist.push(entry);
+		this._waitlist.push(entry);
 		return entry;
 	}
 
@@ -35,17 +35,17 @@ export default class WaitlistService {
 	}
 
 	public static remove(entryId: string): void {
-		WaitlistService._waitlist = WaitlistService._waitlist.filter((entry) => entry.id !== entryId);
+		this._waitlist = this._waitlist.filter((entry) => entry.id !== entryId);
 	}
 
 	public static removeByRider(riderId: string): void {
-		WaitlistService._waitlist = WaitlistService._waitlist.filter(
+		this._waitlist = this._waitlist.filter(
 			(entry) => !entry.riders.some((rider) => rider.id !== riderId)
 		);
 	}
 
 	public static update(entryId: string, riders: Rider[]): WaitlistEntry | undefined {
-		const entry = WaitlistService._waitlist.find((entry) => entry.id === entryId);
+		const entry = this._waitlist.find((entry) => entry.id === entryId);
 		if (entry) {
 			entry.riders = riders;
 			return entry;
