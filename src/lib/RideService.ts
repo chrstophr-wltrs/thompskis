@@ -49,4 +49,12 @@ export default class RideService {
 	public static remove(rideId: string): void {
 		RideService._completedRides = RideService._completedRides.filter((ride) => ride.id !== rideId);
 	}
+
+	public static averageDuration(): number {
+		const totalDuration = RideService._completedRides.reduce(
+			(acc, ride) => acc + ride.duration!,
+			0
+		);
+		return totalDuration / RideService._completedRides.length;
+	}
 }
