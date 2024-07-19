@@ -16,6 +16,6 @@ export interface CreateRiderRequest {
 	lastName: string;
 	family: Family;
 	sex: Sex;
-	age: number;
+	isAdult: boolean;
 	availableTime?: TimeSpan;
 }
