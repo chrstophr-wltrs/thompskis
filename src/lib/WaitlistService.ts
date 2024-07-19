@@ -1,4 +1,5 @@
 import type { Rider, WaitlistEntry } from './model';
+import RideService from './RideService';
 import { isKidRide } from './validation';
 
 export default class WaitlistService {
@@ -26,6 +27,8 @@ export default class WaitlistService {
 			expectedWaitMinutes: 0
 		};
 		this._waitlist.push(entry);
+		this.sortWaitlist();
+		entry.expectedWaitMinutes = this.getExpectedWaitTime(entry.id)!;
 		return entry;
 	}
 
@@ -52,12 +55,24 @@ export default class WaitlistService {
 		}
 	}
 
-	/* Sort waitlist by rideCountScore and createdDate */
-	public static sort(): void {
+	public static sortWaitlist(): void {
 		this._waitlist.sort((a, b) => {
 			return a.rideCountScore === b.rideCountScore
 				? a.createdAt.getTime() - b.createdAt.getTime()
 				: a.rideCountScore - b.rideCountScore;
 		});
+	}
+
+	public static getExpectedWaitTime(entryId: string): number | undefined {
+		const duration = RideService.averageDuration();
+		const index = this._waitlist.findIndex((entry) => entry.id === entryId);
+		return index !== -1 ? duration * index - RideService.highestDuration() : undefined;
+	}
+
+	public static updateAllExpectedWaitTimes(): void {
+		const averageDuration = RideService.averageDuration();
+		for (let i = 0; i < this._waitlist.length; i++) {
+			this._waitlist[i].expectedWaitMinutes = averageDuration * i;
+		}
 	}
 }
