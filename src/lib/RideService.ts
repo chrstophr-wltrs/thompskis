@@ -1,5 +1,5 @@
 import { millisecondsInMinute } from 'date-fns/constants';
-import type { Ride } from './model';
+import type { Ride, Rider } from './model';
 
 export default class RideService {
 	private static _currentRides: Ride[] = [];
@@ -21,17 +21,32 @@ export default class RideService {
 		);
 	}
 
-	public static complete(index: number): Ride | undefined {
-		const completed = RideService._currentRides[index];
+	public static complete(rideId: string): Ride | undefined {
+		const completed = RideService._currentRides.find((ride) => ride.id === rideId);
 		if (completed) {
 			completed.endTime = new Date();
 			completed.duration = Math.round(
 				(completed.endTime.getTime() - completed.startTime.getTime()) / millisecondsInMinute
 			);
 			completed.isComplete = true;
-			RideService._currentRides.splice(index, 1);
+			RideService._currentRides = RideService._currentRides.filter((ride) => ride.id !== rideId);
 			RideService._completedRides.push(completed);
 			return completed;
 		}
+	}
+
+	public static add(riders: Rider[]): Ride {
+		const ride: Ride = {
+			id: crypto.randomUUID(),
+			startTime: new Date(),
+			isComplete: false,
+			riders: riders
+		};
+		RideService._currentRides.push(ride);
+		return ride;
+	}
+
+	public static remove(rideId: string): void {
+		RideService._completedRides = RideService._completedRides.filter((ride) => ride.id !== rideId);
 	}
 }
