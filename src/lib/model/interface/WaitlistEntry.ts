@@ -5,6 +5,7 @@ export interface WaitlistEntry extends CreateWaitlistEntryRequest {
 	createdAt: Date;
 	rideCountScore: number;
 	rideMinutesScore: number;
+	expectedWaitMinutes: number;
 }
 
 export interface CreateWaitlistEntryRequest {
