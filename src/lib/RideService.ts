@@ -43,6 +43,12 @@ export default class RideService {
 		}
 	}
 
+	public static updateTimes(): void {
+		for (const ride of this._currentRides) {
+			ride.duration = Math.floor(new Date().getTime() - ride.startTime.getTime() / millisecondsInMinute);;
+		}
+	}
+
 	public static add(riders: Rider[]): Ride {
 		const ride: Ride = {
 			id: crypto.randomUUID(),
@@ -61,5 +67,9 @@ export default class RideService {
 	public static averageDuration(): number {
 		const totalDuration = this._completedRides.reduce((acc, ride) => acc + ride.duration!, 0);
 		return totalDuration / this._completedRides.length;
+	}
+
+	public static highestDuration(): number {
+		return this._currentRides.reduce((acc, ride) => Math.max(acc, ride.duration!), 0);
 	}
 }
