@@ -23,7 +23,6 @@ export default class WaitlistService {
 			createdAt: new Date(),
 			riders: riders,
 			rideCountScore: WaitlistService.findRideCountScore(riders),
-			rideMinutesScore: WaitlistService.findRideMinutesScore(riders),
 			expectedWaitMinutes: 0
 		};
 		WaitlistService._waitlist.push(entry);
@@ -36,14 +35,6 @@ export default class WaitlistService {
 			return kidRiders.reduce((acc, rider) => acc + rider.rideCount, 0) / kidRiders.length;
 		}
 		return riders.reduce((acc, rider) => acc + rider.rideCount, 0) / riders.length;
-	}
-
-	private static findRideMinutesScore(riders: Rider[]): number {
-		if (isKidRide(riders)) {
-			const kidRiders = riders.filter((rider) => !rider.isAdult);
-			return kidRiders.reduce((acc, rider) => acc + rider.rideMinutes, 0) / kidRiders.length;
-		}
-		return riders.reduce((acc, rider) => acc + rider.rideMinutes, 0) / riders.length;
 	}
 
 	public static remove(entryId: string): void {

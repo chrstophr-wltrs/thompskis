@@ -1,5 +1,6 @@
 import { millisecondsInMinute } from 'date-fns/constants';
 import type { Ride, Rider } from './model';
+import { isKidRide } from './validation';
 
 export default class RideService {
 	private static _currentRides: Ride[] = [];
@@ -29,6 +30,15 @@ export default class RideService {
 				(completed.endTime.getTime() - completed.startTime.getTime()) / millisecondsInMinute
 			);
 			completed.isComplete = true;
+
+			const targetRiders = isKidRide(completed.riders)
+				? completed.riders.filter((r) => !r.isAdult)
+				: completed.riders;
+			for (const rider of targetRiders) {
+				rider.rideCount++;
+				if (completed.duration! > this.averageDuration() * 1.65) rider.rideCount++;
+			}
+
 			RideService._currentRides = RideService._currentRides.filter((ride) => ride.id !== rideId);
 			RideService._completedRides.push(completed);
 			return completed;

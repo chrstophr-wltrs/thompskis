@@ -7,7 +7,6 @@ import type { Family, Sex, TimeSpan } from '..';
 export interface Rider extends CreateRiderRequest {
 	id: string;
 	nickName?: string;
-	rideMinutes: number;
 	rideCount: number;
 }
 
