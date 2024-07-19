@@ -1,13 +1,10 @@
 import type { Rider } from '.';
 
-export interface WaitlistEntry extends CreateWaitlistEntryRequest {
+export interface WaitlistEntry {
 	id: string;
 	createdAt: Date;
 	rideCountScore: number;
 	rideMinutesScore: number;
 	expectedWaitMinutes: number;
-}
-
-export interface CreateWaitlistEntryRequest {
 	riders: Rider[];
 }
