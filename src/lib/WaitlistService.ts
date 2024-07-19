@@ -30,11 +30,8 @@ export default class WaitlistService {
 	}
 
 	private static findRideCountScore(riders: Rider[]): number {
-		if (isKidRide(riders)) {
-			const kidRiders = riders.filter((rider) => !rider.isAdult);
-			return kidRiders.reduce((acc, rider) => acc + rider.rideCount, 0) / kidRiders.length;
-		}
-		return riders.reduce((acc, rider) => acc + rider.rideCount, 0) / riders.length;
+		const targetRiders = isKidRide(riders) ? riders.filter((r) => !r.isAdult) : riders;
+		return targetRiders.reduce((acc, rider) => acc + rider.rideCount, 0) / riders.length;
 	}
 
 	public static remove(entryId: string): void {
