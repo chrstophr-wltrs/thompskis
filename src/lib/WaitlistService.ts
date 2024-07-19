@@ -72,7 +72,7 @@ export default class WaitlistService {
 	public static updateAllExpectedWaitTimes(): void {
 		const averageDuration = RideService.averageDuration();
 		for (let i = 0; i < this._waitlist.length; i++) {
-			this._waitlist[i].expectedWaitMinutes = averageDuration * i;
+			this._waitlist[i].expectedWaitMinutes = averageDuration * i - RideService.highestDuration();
 		}
 	}
 }
