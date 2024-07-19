@@ -38,6 +38,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"date-fns": "^3.6.0"
+		"date-fns": "^3.6.0",
+		"theme-change": "^2.5.0"
 	}
 }
