@@ -1,2 +1,12 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import RideCard from '$lib/components/RideCard.svelte'; // Import the RideCard component
+	let testRide = {
+		riders: [{ nickName: 'Alice' }, { nickName: 'Bob' }, { nickName: 'Charlie' }],
+		duration: 10
+	};
+</script>
+
+<div class="container mx-auto px-4 prose">
+	<h1>ThompSkis</h1>
+	<RideCard ride={testRide} />
+</div>
