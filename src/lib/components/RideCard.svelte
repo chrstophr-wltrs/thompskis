@@ -8,7 +8,7 @@
 	export let ride: BabyRide;
 </script>
 
-<div class="card card-compact bg-accent">
+<div class="card card-compact bg-neutral-content">
 	<div class="card-body">
 		<h4 class="card-title">
 			{ride.riders ? ride.riders.map((r) => r.nickName).join(', ') : ''}
