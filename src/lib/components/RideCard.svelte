@@ -8,13 +8,13 @@
 	export let ride: BabyRide;
 </script>
 
-<div class="card card-compact bg-neutral-content">
+<div class="card card-compact bg-base-200 shadow-md">
 	<div class="card-body">
-		<h4 class="card-title">
+		<h2 class="card-title text-base-content">
 			{ride.riders ? ride.riders.map((r) => r.nickName).join(', ') : ''}
-		</h4>
-		<p>Out for {ride.duration} min{ride.duration == 1 ? '' : 's'}</p>
-		<div class="card-actions justify-center">
+		</h2>
+		<p class="text-base-content">Out for {ride.duration} min{ride.duration == 1 ? '' : 's'}</p>
+		<div class="card-actions justify-end">
 			<button class="btn btn-primary">End Ride</button>
 		</div>
 	</div>
