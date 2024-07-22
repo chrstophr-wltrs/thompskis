@@ -8,8 +8,8 @@ export function isValidRide(riders: Rider[]): boolean {
 }
 
 export function canChaperoneThompsonGirls(rider: Rider): boolean {
-	return rider.family == Family.Thompson
-	|| (rider.isAdult && rider.sex === Sex.Female);
+	return rider.isAdult
+	&& (rider.family == Family.Thompson || rider.sex === Sex.Female);
 }
 
 export function isKidRide(riders: Rider[]): boolean {
