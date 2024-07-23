@@ -1,5 +1,6 @@
 import type { CreateRiderRequest, Rider } from './model';
 import { baseRiders } from '../data';
+import { v4 as uuidv4 } from 'uuid';
 
 export default class RiderService {
 	private static _riders: Rider[] = [];
@@ -19,7 +20,7 @@ export default class RiderService {
 	public static add(rider: CreateRiderRequest): Rider {
 		const newRider: Rider = {
 			...rider,
-			id: crypto.randomUUID(),
+			id: uuidv4(),
 			rideCount: 0
 		};
 		this._riders.push(newRider);

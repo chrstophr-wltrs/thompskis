@@ -1,6 +1,7 @@
 import { millisecondsInMinute } from 'date-fns/constants';
 import type { Ride, Rider } from './model';
 import { isKidRide } from './validation';
+import { v4 as uuidv4 } from 'uuid';
 
 export default class RideService {
 	private static _currentRides: Ride[] = [];
@@ -51,7 +52,7 @@ export default class RideService {
 
 	public static add(riders: Rider[]): Ride {
 		const ride: Ride = {
-			id: crypto.randomUUID(),
+			id: uuidv4(),
 			startTime: new Date(),
 			isComplete: false,
 			riders: riders

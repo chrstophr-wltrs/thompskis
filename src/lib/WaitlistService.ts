@@ -1,6 +1,7 @@
 import type { Rider, WaitlistEntry } from './model';
 import RideService from './RideService';
 import { isKidRide } from './validation';
+import { v4 as uuidv4 } from 'uuid';
 
 export default class WaitlistService {
 	private static _waitlist: WaitlistEntry[] = [];
@@ -20,7 +21,7 @@ export default class WaitlistService {
 
 	public static add(riders: Rider[]): WaitlistEntry {
 		const entry: WaitlistEntry = {
-			id: crypto.randomUUID(),
+			id: uuidv4(),
 			createdAt: new Date(),
 			riders: riders,
 			rideCountScore: this.findRideCountScore(riders),
