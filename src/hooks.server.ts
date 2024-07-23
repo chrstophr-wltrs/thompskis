@@ -1,3 +1,6 @@
 import RiderService from "$lib/RiderService";
+import { building } from "$app/environment";
 
-RiderService.loadRiders();
+if (!building) {
+  RiderService.loadRiders();
+}
