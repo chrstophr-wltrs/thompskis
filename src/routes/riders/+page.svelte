@@ -1,14 +1,11 @@
 <script lang="ts">
 	import RiderService from '$lib/RiderService';
-	import { onMount } from 'svelte';
-	onMount(() => {
-		RiderService.loadRiders();
-	});
 </script>
-<div class="container mx-auto px-4 space-y-4 prose">
+<div class="container mx-auto px-4 prose">
 	<h1>Riders</h1>
+	<button class="btn btn-primary">Add Rider</button>
 	<div class="overflow-x-auto">
-		<table class="table">
+		<table class="table table-pin-rows">
 			<thead>
 				<tr>
 					<th>Name</th>
