@@ -1,394 +1,396 @@
-[
+import { Family, Sex, type CreateRiderRequest } from "$lib/model";
+
+export const baseRiders: CreateRiderRequest[] = [
     {
       "firstName": "Lori",
       "lastName": "Forsyth",
-      "family": "Forsyth",
+      "family": Family.Forsyth,
       "isAdult": true,
-      "sex": "Female"
+      "sex": Sex.Female
     },
     {
       "firstName": "Jon",
       "lastName": "Forsyth",
-      "family": "Forsyth",
+      "family": Family.Forsyth,
       "isAdult": true,
-      "sex": "Male"
+      "sex": Sex.Male
     },
     {
       "firstName": "Sara",
       "lastName": "Kleiner",
-      "family": "Forsyth",
+      "family": Family.Forsyth,
       "isAdult": true,
-      "sex": "Female"
+      "sex": Sex.Female
     },
     {
       "firstName": "Frederik",
       "lastName": "Kleiner",
-      "family": "Forsyth",
+      "family": Family.Forsyth,
       "isAdult": true,
-      "sex": "Male"
+      "sex": Sex.Male
     },
     {
       "firstName": "Selina",
       "lastName": "Forsyth",
-      "family": "Forsyth",
+      "family": Family.Forsyth,
       "isAdult": true,
-      "sex": "Female"
+      "sex": Sex.Female
     },
     {
       "firstName": "Jared",
       "lastName": "Forsyth",
-      "family": "Forsyth",
+      "family": Family.Forsyth,
       "isAdult": true,
-      "sex": "Male"
+      "sex": Sex.Male
     },
     {
       "firstName": "Anna",
       "lastName": "Forsyth",
-      "family": "Forsyth",
+      "family": Family.Forsyth,
       "isAdult": true,
-      "sex": "Female"
+      "sex": Sex.Female
     },
     {
       "firstName": "Andrew",
       "lastName": "Fredrick",
-      "family": "Forsyth",
+      "family": Family.Forsyth,
       "isAdult": true,
-      "sex": "Male"
+      "sex": Sex.Male
     },
     {
       "firstName": "Rowan",
       "lastName": "Forsyth",
-      "family": "Forsyth",
+      "family": Family.Forsyth,
       "isAdult": true,
-      "sex": "Female"
+      "sex": Sex.Female
     },
     {
       "firstName": "Mark",
       "lastName": "Forsyth",
-      "family": "Forsyth",
+      "family": Family.Forsyth,
       "isAdult": true,
-      "sex": "Male"
+      "sex": Sex.Male
     },
     {
       "firstName": "Jonathan",
       "lastName": "Kleiner",
-      "family": "Forsyth",
+      "family": Family.Forsyth,
       "isAdult": false,
-      "sex": "Male"
+      "sex": Sex.Male
     },
     {
       "firstName": "James",
       "lastName": "Forsyth",
-      "family": "Forsyth",
+      "family": Family.Forsyth,
       "isAdult": false,
-      "sex": "Male"
+      "sex": Sex.Male
     },
     {
       "firstName": "Ethan",
       "lastName": "Forsyth",
-      "family": "Forsyth",
+      "family": Family.Forsyth,
       "isAdult": false,
-      "sex": "Male"
+      "sex": Sex.Male
     },
     {
       "firstName": "Kristyn",
       "lastName": "Allred",
-      "family": "Allred",
+      "family": Family.Allred,
       "isAdult": true,
-      "sex": "Female"
+      "sex": Sex.Female
     },
     {
       "firstName": "Brent",
       "lastName": "Allred",
-      "family": "Allred",
+      "family": Family.Allred,
       "isAdult": true,
-      "sex": "Male"
+      "sex": Sex.Male
     },
     {
       "firstName": "Jessica",
       "lastName": "Davison",
-      "family": "Allred",
+      "family": Family.Allred,
       "isAdult": true,
-      "sex": "Female"
+      "sex": Sex.Female
     },
     {
       "firstName": "Joe",
       "lastName": "Davison",
-      "family": "Allred",
+      "family": Family.Allred,
       "isAdult": true,
-      "sex": "Male"
+      "sex": Sex.Male
     },
     {
       "firstName": "Autumn",
       "lastName": "Davison",
-      "family": "Allred",
+      "family": Family.Allred,
       "isAdult": false,
-      "sex": "Female"
+      "sex": Sex.Female
     },
     {
       "firstName": "Nate",
       "lastName": "Allred",
-      "family": "Allred",
+      "family": Family.Allred,
       "isAdult": true,
-      "sex": "Male"
+      "sex": Sex.Male
     },
     {
       "firstName": "Amy",
       "lastName": "Pfiel",
-      "family": "Allred",
+      "family": Family.Allred,
       "isAdult": true,
-      "sex": "Female"
+      "sex": Sex.Female
     },
     {
       "firstName": "Rachel",
       "lastName": "Allred",
-      "family": "Allred",
+      "family": Family.Allred,
       "isAdult": true,
-      "sex": "Female"
+      "sex": Sex.Female
     },
     {
       "firstName": "Kyle",
       "lastName": "Garwick",
-      "family": "Allred",
+      "family": Family.Allred,
       "isAdult": true,
-      "sex": "Male"
+      "sex": Sex.Male
     },
     {
       "firstName": "Sean",
       "lastName": "Allred",
-      "family": "Allred",
+      "family": Family.Allred,
       "isAdult": true,
-      "sex": "Male"
+      "sex": Sex.Male
     },
     {
       "firstName": "Lexie",
       "lastName": "Taylor",
-      "family": "Allred",
+      "family": Family.Allred,
       "isAdult": true,
-      "sex": "Female"
+      "sex": Sex.Female
     },
     {
       "firstName": "Adam",
       "lastName": "Allred",
-      "family": "Allred",
+      "family": Family.Allred,
       "isAdult": true,
-      "sex": "Male"
+      "sex": Sex.Male
     },
     {
       "firstName": "Shannyn",
       "lastName": "Walters",
-      "family": "Walters",
+      "family": Family.Walters,
       "isAdult": true,
-      "sex": "Female"
+      "sex": Sex.Female
     },
     {
       "firstName": "Christopher",
       "lastName": "Walters",
-      "family": "Walters",
+      "family": Family.Walters,
       "isAdult": true,
-      "sex": "Male"
+      "sex": Sex.Male
     },
     {
       "firstName": "Michael",
       "lastName": "Walters",
-      "family": "Walters",
+      "family": Family.Walters,
       "isAdult": true,
-      "sex": "Male"
+      "sex": Sex.Male
     },
     {
       "firstName": "Emma",
       "lastName": "Walters",
-      "family": "Walters",
+      "family": Family.Walters,
       "isAdult": true,
-      "sex": "Female"
+      "sex": Sex.Female
     },
     {
       "firstName": "Robbyn",
       "lastName": "Scribner",
-      "family": "Scribner",
+      "family": Family.Scribner,
       "isAdult": true,
-      "sex": "Female"
+      "sex": Sex.Female
     },
     {
       "firstName": "Craig",
       "lastName": "Scribner",
-      "family": "Scribner",
+      "family": Family.Scribner,
       "isAdult": true,
-      "sex": "Male"
+      "sex": Sex.Male
     },
     {
       "firstName": "Maggie",
       "lastName": "Scribner",
-      "family": "Scribner",
+      "family": Family.Scribner,
       "isAdult": true,
-      "sex": "Female"
+      "sex": Sex.Female
     },
     {
       "firstName": "Ian",
       "lastName": "Briggs",
-      "family": "Scribner",
+      "family": Family.Scribner,
       "isAdult": true,
-      "sex": "Male"
+      "sex": Sex.Male
     },
     {
       "firstName": "Thompson",
       "lastName": "Scribner",
-      "family": "Scribner",
+      "family": Family.Scribner,
       "isAdult": true,
-      "sex": "Female"
+      "sex": Sex.Female
     },
     {
       "firstName": "Lucy",
       "lastName": "Scribner",
-      "family": "Scribner",
+      "family": Family.Scribner,
       "isAdult": true,
-      "sex": "Female"
+      "sex": Sex.Female
     },
     {
       "firstName": "Bridger",
       "lastName": "Thorne",
-      "family": "Scribner",
+      "family": Family.Scribner,
       "isAdult": true,
-      "sex": "Male"
+      "sex": Sex.Male
     },
     {
       "firstName": "Jack",
       "lastName": "Scribner",
-      "family": "Scribner",
+      "family": Family.Scribner,
       "isAdult": true,
-      "sex": "Male"
+      "sex": Sex.Male
     },
     {
       "firstName": "Penny",
       "lastName": "Scribner",
-      "family": "Scribner",
+      "family": Family.Scribner,
       "isAdult": false,
-      "sex": "Female"
+      "sex": Sex.Female
     },
     {
       "firstName": "Peter",
       "lastName": "Scribner",
-      "family": "Scribner",
+      "family": Family.Scribner,
       "isAdult": false,
-      "sex": "Male"
+      "sex": Sex.Male
     },
     {
       "firstName": "Daylyn",
       "lastName": "Seaman",
-      "family": "Seaman",
+      "family": Family.Seaman,
       "isAdult": true,
-      "sex": "Female"
+      "sex": Sex.Female
     },
     {
       "firstName": "Clark",
       "lastName": "Seaman",
-      "family": "Seaman",
+      "family": Family.Seaman,
       "isAdult": true,
-      "sex": "Male"
+      "sex": Sex.Male
     },
     {
       "firstName": "Katie",
       "lastName": "Liddell",
-      "family": "Seaman",
+      "family": Family.Seaman,
       "isAdult": true,
-      "sex": "Female"
+      "sex": Sex.Female
     },
     {
       "firstName": "Taylor",
       "lastName": "Liddell",
-      "family": "Seaman",
+      "family": Family.Seaman,
       "isAdult": true,
-      "sex": "Male"
+      "sex": Sex.Male
     },
     {
       "firstName": "Brooklyn",
       "lastName": "Liddell",
-      "family": "Seaman",
+      "family": Family.Seaman,
       "isAdult": false,
-      "sex": "Female"
+      "sex": Sex.Female
     },
     {
       "firstName": "Rylie",
       "lastName": "Liddell",
-      "family": "Seaman",
+      "family": Family.Seaman,
       "isAdult": false,
-      "sex": "Female"
+      "sex": Sex.Female
     },
     {
       "firstName": "Allie",
       "lastName": "Seaman",
-      "family": "Seaman",
+      "family": Family.Seaman,
       "isAdult": true,
-      "sex": "Female"
+      "sex": Sex.Female
     },
     {
       "firstName": "Daniel",
       "lastName": "Seaman",
-      "family": "Seaman",
+      "family": Family.Seaman,
       "isAdult": true,
-      "sex": "Male"
+      "sex": Sex.Male
     },
     {
       "firstName": "Lizzie",
       "lastName": "Seaman",
-      "family": "Seaman",
+      "family": Family.Seaman,
       "isAdult": true,
-      "sex": "Female"
+      "sex": Sex.Female
     },
     {
       "firstName": "Hannah",
       "lastName": "Seaman",
-      "family": "Seaman",
+      "family": Family.Seaman,
       "isAdult": false,
-      "sex": "Female"
+      "sex": Sex.Female
     },
     {
       "firstName": "Megan",
       "lastName": "Seaman",
-      "family": "Seaman",
+      "family": Family.Seaman,
       "isAdult": false,
-      "sex": "Female"
+      "sex": Sex.Female
     },
     {
       "firstName": "Nate",
       "lastName": "Thompson",
-      "family": "Thompson",
+      "family": Family.Thompson,
       "isAdult": true,
-      "sex": "Male"
+      "sex": Sex.Male
     },
     {
       "firstName": "Lachelle",
       "lastName": "Thompson",
-      "family": "Thompson",
+      "family": Family.Thompson,
       "isAdult": true,
-      "sex": "Female"
+      "sex": Sex.Female
     },
     {
       "firstName": "Kadon",
       "lastName": "Thompson",
-      "family": "Thompson",
+      "family": Family.Thompson,
       "isAdult": true,
-      "sex": "Male"
+      "sex": Sex.Male
     },
     {
       "firstName": "Kyrie",
       "lastName": "Thompson",
-      "family": "Thompson",
+      "family": Family.Thompson,
       "isAdult": true,
-      "sex": "Female"
+      "sex": Sex.Female
     },
     {
       "firstName": "Piper",
       "lastName": "Thompson",
-      "family": "Thompson",
+      "family": Family.Thompson,
       "isAdult": false,
-      "sex": "Female"
+      "sex": Sex.Female
     },
     {
       "firstName": "Asher",
       "lastName": "Thompson",
-      "family": "Thompson",
+      "family": Family.Thompson,
       "isAdult": false,
-      "sex": "Female"
+      "sex": Sex.Female
     }
   ]
